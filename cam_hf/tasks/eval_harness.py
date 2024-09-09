@@ -16,13 +16,12 @@ tokenizer = None
 
 def process_init():
     global tokenizer
-    model_name = os.environ.get('MODEL_NAME', 'facebook/opt-1.3b')
-    model_name= '/data/disk/zlr/llama-7b-hf'
+    model_name = "meta-llama/Llama-2-7b-hf"
     if model_name == "EleutherAI/gpt-neox-20b":
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         tokenizer.model_max_length = int(1e30)
         tokenizer.pad_token = "<|endoftext|>"
-    elif model_name ==  '/data/disk/zlr/llama-7b-hf':
+    elif model_name == "meta-llama/Llama-2-7b-hf":
         tokenizer =  LlamaTokenizer.from_pretrained(model_name)
         tokenizer.model_max_length = int(1e30)
         tokenizer.pad_token = "<|endoftext|>"

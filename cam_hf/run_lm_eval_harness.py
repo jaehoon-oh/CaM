@@ -7,16 +7,16 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, LlamaT
 from utils_lm_eval.modify_llama_cam import convert_kvcache_llama_cam
 from utils_lm_eval.modify_llama_sink import convert_kvcache_llama_sink
 from utils_lm_eval.modify_llama_h2o import convert_kvcache_llama_h2o
-from utils_lm_eval.modify_gptneox_cam import convert_kvcache_gpt_neox_cam, GPTNeoXAttention_Mask
-from utils_lm_eval.modify_gptneox_sink import convert_kvcache_gpt_neox_sink, GPTNeoXAttention_Mask
-from utils_lm_eval.modify_gptneox_h2o import convert_kvcache_gpt_neox_h2o, GPTNeoXAttention_Mask
-from utils_lm_eval.modify_opt_h2o import convert_kvcache_opt_h2o, OPTAttention_Mask
+# from utils_lm_eval.modify_gptneox_cam import convert_kvcache_gpt_neox_cam, GPTNeoXAttention_Mask
+# from utils_lm_eval.modify_gptneox_sink import convert_kvcache_gpt_neox_sink, GPTNeoXAttention_Mask
+# from utils_lm_eval.modify_gptneox_h2o import convert_kvcache_gpt_neox_h2o, GPTNeoXAttention_Mask
+# from utils_lm_eval.modify_opt_h2o import convert_kvcache_opt_h2o, OPTAttention_Mask
 
 
 ENABLE_Heavy_Hitter_FUNCTIONS = {
     "llama": { "cam": convert_kvcache_llama_cam, "streamingllm": convert_kvcache_llama_sink, "h2o": convert_kvcache_llama_h2o },
-    "opt": {"h2o":convert_kvcache_opt_h2o,},
-    "gpt_neox": {"cam":convert_kvcache_gpt_neox_cam,"streamingllm":convert_kvcache_gpt_neox_sink,"h2o":convert_kvcache_gpt_neox_h2o },
+    # "opt": {"h2o":convert_kvcache_opt_h2o,},
+    # "gpt_neox": {"cam":convert_kvcache_gpt_neox_cam,"streamingllm":convert_kvcache_gpt_neox_sink,"h2o":convert_kvcache_gpt_neox_h2o },
 }
 
 if __name__ == '__main__':

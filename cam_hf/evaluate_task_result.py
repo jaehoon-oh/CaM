@@ -35,7 +35,7 @@ if __name__ == '__main__':
     elif args.model_type == 'gpt_neox':
         os.environ['MODEL_NAME'] = "EleutherAI/gpt-neox-20b"
     elif args.model_type == 'llama':
-        os.environ['MODEL_NAME'] = "huggyllama/llama-7b"
+        os.environ['MODEL_NAME'] = "meta-llama/Llama-2-7b-hf"
     else:
         assert False
 
