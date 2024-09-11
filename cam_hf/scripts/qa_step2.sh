@@ -1,4 +1,4 @@
-export HF_TOKEN="hf_XXX"
+export HF_TOKEN="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"
 
 task=openbookqa #mathqa,boolq,copa,winogrande...
 shots=0
@@ -6,14 +6,13 @@ shots=0
 GPU=0
 model=meta-llama/Llama-2-7b-hf
 model_arch=llama   # llama / gpt-neox / opt
-CUDA_VISIBLE_DEVICES=${GPU} python -u run_lm_eval_harness.py \
-  --input-path data/${task}-${shots}shot.jsonl \
-  --output-path results/${task}-${shots}shot-${model_arch}-full.jsonl \
-  --model-name ${model} \
-  --model-type ${model_arch}
+# CUDA_VISIBLE_DEVICES=${GPU} python -u run_lm_eval_harness.py \
+#   --input-path data/${task}-${shots}shot.jsonl \
+#   --output-path results/${task}-${shots}shot-${model_arch}-full.jsonl \
+#   --model-name ${model} \
+#   --model-type ${model_arch}
 
 method_array=("streamingllm" "h2o" "cam")
-
 for method in "${method_array[@]}"
 do
   CUDA_VISIBLE_DEVICES=${GPU} python -u run_lm_eval_harness.py \
