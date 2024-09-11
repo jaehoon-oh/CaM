@@ -1,4 +1,4 @@
-export HF_TOKEN="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"
+export HF_TOKEN="hf_XXX"
 
 task=openbookqa #mathqa,boolq,copa,winogrande...
 shots=0 
